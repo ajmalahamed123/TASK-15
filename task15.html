@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+        .container{
+            height : 500px;
+            width : 500px;
+            
+            display : grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4,1fr);
+            gap : 5px;
+            padding:20px;
+            border: 3px solid black;
+            /* background-color:  rgb(156, 106, 216); */
+        }
+        .pic1{
+            
+            grid-column : 1 / span 2;
+            grid-row : 1 / span 1;
+
+        }
+        .pic2 img{
+            height:110px;
+            width:200px;
+
+            object-fit: cover;
+        }
+        .pic2{
+            object-fit: cover;
+            grid-column : 3 / span 2;
+            grid-row : 1 / span 1;
+        }
+        .pic3{
+            
+            grid-column : 1 / span 2;
+            grid-row : 2 / span 3;
+        }
+        .pic3 form{
+            
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* margin-bottom: 5px; */
+
+        }
+        input{
+            border: 2px solid #0f1620;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        select{
+            border: 2px solid #0f1620;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        .pic3 .btn{
+            
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            
+            /* margin-bottom: 5px; */
+
+        }
+        .btn button{
+            height:25px;
+            border-radius: 6px;
+            font-size: 18px;
+            background-color:  rgb(156, 106, 216);
+            color: white;
+        }
+
+        .pic4{
+            /* background-color: yellow; */
+            grid-column: 3 / span 2;
+            grid-row: 2 / span 3;
+            position: relative;
+            padding:10px;
+            padding-top: 20px;
+        }
+        .output{
+            display:flex;
+            position: absolute;
+            height:160px;
+            width:210px;
+            background-color: rgb(156, 106, 216);
+            left: 10px;
+            top: 50px;
+            padding:3px;
+            flex-direction: column;
+            color: white;
+        }
+        /* .bg{
+            display: flex;
+            width:200px;
+            height:100px;
+            position: absolute;
+            left:0;
+            top:0;
+            background-color: rgb(156, 106, 216);
+            transform: rotate(-50deg);
+            
+
+        } */
+        /* .pic5{
+            background-color: purple;
+            grid-column: 1 / span 1;
+            grid-row: 3 / span 1;
+        }
+        .pic6{
+            background-color: purple;
+            grid-column: 1 / span 1;
+            grid-row: 4 / span 1;
+        }
+        .pic7{
+            background-color: purple;
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 2;
+        }
+        .pic8{
+            background-color: purple;
+            grid-column: 3 / span 1;
+            grid-row: 3 / span 2;
+        }
+        .pic9{
+            background-color: purple;
+            grid-column: 4 / span 1;
+            grid-row: 3 / span 2;
+        } */
+
+        
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pic1">
+            <h1>Bus Ticket </h1>
+            <h1>Booking</h1>
+        </div>
+        <div class="pic2">
+            <img src="images (1).jpeg">
+        </div>
+        <div class="pic3">
+            <form id="bookingForm">
+                <label>Enter bus name: </label>
+                <input type="text" name="busname" id="busname">
+                <label>enter your age: </label>
+                <input type="number" name="age" id="age">
+                <label>select bus route: </label>
+                <select id="busroute" required>
+                    <option value="" disabled selected>
+                        Select bus route
+                    </option>
+                    <option value="trichy - chennai">trichy - chennai</option>
+                    <option value="chennai - trichy">Chennai - trichy</option>
+                    
+                </select>
+                <label>select Seat type: </label>
+                <select id="seattype" required>
+                    <option value="" disabled selected>
+                        Select seat type
+                    </option>
+                    <option value="regular">Regular - 500</option>
+                    <option value="premium">Premium - 700</option>
+                    <option value="VIP">VIP - 1000</option>
+                </select>
+                <label>select bus type: </label>
+                <select id="bustype" required>
+                    <option value="" disabled selected>
+                        Select bus type
+                    </option>
+                    <option value="AC">AC</option>
+                    <option value="NON-AC">NON-AC</option>
+                    
+                </select>
+                <label>enter number of tickets: </label>
+                <input type="number" name="count" id="count">
+                <div class="btn">
+                    <button>submit</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="pic4">
+            <h2>Status</h2>
+            <div class="output">
+                <h2>booking summary</h2><br>
+                <h4 id = "BusName">bus Name: </h4><br>
+                <h4 id = "BusRoute">Bus route: </h4><br>
+                <h4 id = "TotalCost">total price: </h4><br>
+            </div>
+        </div>
+        <div class="bg">
+
+        </div>
+        <!-- <div class="pic5">5</div>
+        <div class="pic6">0</div>
+        <div class="pic7">6</div>
+        <div class="pic8">7</div>
+        <div class="pic9">9</div> -->
+    </div>
+    <script src="demo.js"></script>
+    
+</body>
+</html>
